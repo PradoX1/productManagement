@@ -22,6 +22,10 @@ public class Product {
         this.unit = unit;
     }
 
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     public static int getAutoID() {
         return autoID;
     }

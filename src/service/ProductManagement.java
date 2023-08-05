@@ -3,6 +3,7 @@ package service;
 import entities.Product;
 
 import java.util.Arrays;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class ProductManagement {
@@ -34,9 +35,34 @@ public class ProductManagement {
     public void findProductById(int id) {
         System.out.println("---- Kết quả tìm kiếm theo id ----");
         boolean found = false;
+        boolean yn = true;
+        Product newProduct[] = new Product[products.length - 1];
+        int j = 0;
         for (Product product : products) {
             if (product.getId() == id) {
                 displayProductDetails(product);
+                System.out.println("Bạn có muốn xoá sản phẩm không Y/N: ");
+                String choice = scanner.nextLine().toLowerCase(Locale.ROOT);
+                    switch (choice) {
+                        case "y":
+                            if (id<0||id>products.length){
+                                System.out.println("error");;
+                            }
+                            for (int i = 0; i < products.length; i++) {
+                                if (i != id){
+                                    newProduct[j] = products[i];
+                                }
+                            }
+                            System.out.println(Arrays.toString(newProduct));
+                            break;
+                        case "n":
+                            System.out.println("OK");
+                            break;
+                        default:
+                            System.out.println("error");
+                    }
+                System.out.println("Hãy nhập số lượng sản phẩm mới: ");
+                product.setQuantity(Integer.parseInt(scanner.nextLine()));
                 found = true;
                 break;
             }
