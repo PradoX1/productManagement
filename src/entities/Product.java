@@ -2,10 +2,6 @@ package entities;
 
 public class Product {
     private static int autoID = 0;
-
-    public static int getNextID() {
-        return ++autoID;
-    }
     private int id;
     private String name;
     private String description;
@@ -13,8 +9,8 @@ public class Product {
     private double price;
     private String unit;
 
-    public Product(int id, String name, String description, int quantity, double price, String unit) {
-        this.id = id;
+    public Product( String name, String description, int quantity, double price, String unit) {
+        this.id = ++autoID;
         this.name = name;
         this.description = description;
         this.quantity = quantity;
@@ -52,5 +48,17 @@ public class Product {
 
     public String getUnit() {
         return unit;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                ", unit='" + unit + '\'' +
+                '}';
     }
 }

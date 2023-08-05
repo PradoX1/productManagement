@@ -8,8 +8,8 @@ import java.util.Scanner;
 
 public class ProductManagement {
     Scanner scanner = new Scanner(System.in);
-    Product iPhone = new Product(Product.getNextID(), "Iphone", "Original", 100, 36000, "chiếc");
-    Product iPad = new Product(Product.getNextID(), "Ipad", "Original", 4, 86000, "chiếc");
+    Product iPhone = new Product( "Iphone", "Original", 100, 36000, "chiếc");
+    Product iPad = new Product("Ipad", "Original", 4, 86000, "chiếc");
     Product products[] = {iPhone, iPad};
 
     public void showProducts() {
