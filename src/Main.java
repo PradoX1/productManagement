@@ -16,8 +16,7 @@ public class Main {
             System.out.println("0 - Thoát");
             System.out.print("Nhập lựa chọn của bạn: ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline character
-
+            scanner.nextLine();
             switch (choice) {
                 case 1:
                     service.showProducts();
@@ -30,7 +29,7 @@ public class Main {
                 case 3:
                     System.out.print("Nhập id sản phẩm: ");
                     int idToFind = scanner.nextInt();
-                    scanner.nextLine(); // Consume newline character
+                    scanner.nextLine();
                     service.findProductById(idToFind);
                     break;
                 case 4:

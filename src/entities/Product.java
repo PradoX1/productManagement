@@ -49,16 +49,4 @@ public class Product {
     public String getUnit() {
         return unit;
     }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", quantity=" + quantity +
-                ", price=" + price +
-                ", unit='" + unit + '\'' +
-                '}';
-    }
 }
